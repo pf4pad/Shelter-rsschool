@@ -14,6 +14,7 @@
   <link rel="preload" href="fonts/Arial-ItalicMT.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="vendor.css">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="media768px.css">
   <script defer src="script.js"></script>
 </head>
 
@@ -23,37 +24,44 @@
       <div class="container">
         <div class="header__inner">
           <div class="logo">
-            <a href="#" class="logo__link logo__link--our-friends">
+            <a href="../main/index.html" class="logo__link logo__link--our-friends">
               <span class="logo__title logo__title--our-friends">Cozy House</span>
-              <span class="logo__subtitle p logo__subtitle--our-friends">Shelter for pets in Boston</span>
+              <span class="logo__subtitle p logo__subtitle--our-friends">
+                Shelter for pets in Boston
+              </span>
             </a>
           </div>
           <nav class="nav">
-            <ul class="list-reset nav__list p">
+            <ul class="list-reset p nav__list ">
               <li class="nav__item ">
-                <a href="" class="nav__link nav__link--our-friends" href="#">About the shelter</a>
+                <a class="nav__link nav__link--our-friends" href="../main/index.html">About the shelter</a>
               </li>
               <li class="nav__item">
-                <a href="" class="nav__link  link-active--our-friends" href="#">Our pets</a>
+                <a class="nav__link  link-active--our-friends" href="#">Our pets</a>
               </li>
               <li class="nav__item">
-                <a href="" class="nav__link nav__link--our-friends" href="#Help">Help the shelter</a>
+                <a class="nav__link nav__link--our-friends" href="../main/index.html#help">Help the shelter</a>
               </li>
               <li class="nav__item">
-                <a href="" class="nav__link nav__link--our-friends" href="#Footer" data-scroll>Contacts</a>
+                <a class="nav__link nav__link--our-friends" href="#footer" data-scroll>Contacts</a>
               </li>
             </ul>
           </nav>
         </div>
       </div>
+      <a class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
     </header>
     <main class="main">
       <section class="our-friend section-offset">
         <div class="container">
           <div class="our-friend-inner">
-            <hi class="visually-hidden">Cozy House</hi>
+            <h1 class="visually-hidden">Cozy House</h1>
             <h3 class="center">
-              Our friends who <br>
+              Our friends who<br>
               are looking for a house
             </h3>
             <div class="our-friend-slider">
@@ -115,7 +123,7 @@
                 <li class="card-item">
                   <img src="../../assets/img2/pets-scarlet.png" alt="Cat" class="card-img">
                   <h4>
-                    Scarlet
+                    Scarlett
                   </h4>
                   <a href="" class="card-btn">
                     Learn more
@@ -124,7 +132,7 @@
                 <li class="card-item">
                   <img src="../../assets/img2/pets-freddi.png" alt="Cat" class="card-img">
                   <h4>
-                    Freddi
+                    Freddie
                   </h4>
                   <a href="" class="card-btn">
                     Learn more
@@ -133,20 +141,20 @@
               </ul>
             </div>
             <div class="our-friend-buttons">
-              <button class="btn-reset btn-slider-prev">
-                &lt&lt
+              <button class="btn-reset btn-slider-prev" data-state="disabled">
+                &lt;&lt;
               </button>
-              <button class="btn-reset btn-slider-prev">
-                &lt
+              <button class="btn-reset btn-slider-prev" data-state="disabled">
+                &lt;
               </button>
               <button class="btn-reset btn-slider-active">
                 1
               </button>
               <button class="btn-reset btn-slider-next">
-                &gt
+                &gt;
               </button>
               <button class="btn-reset btn-slider-next">
-                &gt&gt
+                &gt;&gt;
               </button>
 
             </div>
@@ -159,57 +167,61 @@
     <footer class="footer" id="footer">
       <div class="container">
         <div class="footer-inner">
-          <div class="footer-column__rigth">
-            <h3 class="footer-title__rigth">
-              For questions <br> and suggestions
-            </h3>
-            <ul class="list-reset footer-list__rigth">
-              <li class="footer-item">
-                <img class="footer-link-img" src="../../assets/icons/icon-email.svg" alt="email">
-                <h4 class="footer-link-title">
-                  <a href="mailto:email@shelter.com" class="footer-link">
+          <div class="footer-description">
 
-                    email@shelter.com
+            <div class="footer-column__rigth">
+              <h3 class="footer-title__rigth">
+                For questions and suggestions
+              </h3>
+              <ul class="list-reset footer-list__rigth">
+                <li class="footer-item">
+
+                  <a class="footer-link-title" target="_blank" href="mailto:email@shelter.com">
+                    <img class="footer-link-img" src="../../assets/icons/icon-email.svg" alt="email">
+                    <span class="footer-link">
+                      email@shelter.com
+                    </span>
                   </a>
-                </h4>
 
-              </li>
-              <li class="footer-item">
-                <img class="footer-link-img" src="../../assets/icons/icon-phone.svg" alt="phone">
-                <h4 class="footer-link-title">
-                  <a href="tel:+136745677554" class="footer-link">
+                </li>
+                <li class="footer-item">
 
-                    +13 674 567 75 54
+                  <a class="footer-link-title" target="_blank" href="tel:+136745677554">
+                    <img class="footer-link-img" src="../../assets/icons/icon-phone.svg" alt="phone">
+                    <span class="footer-link">
+                      +13 674 567 75 54
+                    </span>
                   </a>
-                </h4>
-              </li>
-            </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column__center">
+              <h3 class="footer-title__center">
+                We are waiting for your visit
+              </h3>
+              <ul class="list-reset footer-list__center">
+                <li class="footer-item">
+                  <a class="footer-link-title" target="_blank" href="https://www.google.com/maps/search/">
+                    <img class="footer-link-img" src="../../assets/icons/icon-marker.svg" alt="marker">
+
+                    <span class="footer-link">
+                      1 Central Street, Boston <br> (entrance from the store)
+                    </span>
+                  </a>
+                </li>
+                <li class="footer-item">
+                  <a class="footer-link-title" target="_blank" href="https://www.google.com/maps/search/">
+                    <img class="footer-link-img" src="../../assets/icons/icon-marker.svg" alt="marker">
+
+                    <span class="footer-link">
+
+                      18 South Park, London
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="footer-column__center">
-            <h3 class="footer-title__center">
-              We are waiting <br> for your visit
-            </h3>
-            <ul class="list-reset footer-list__center">
-              <li class="footer-item">
-                <img class="footer-link-img" src="../../assets/icons/icon-marker.svg" alt="marker">
-                <h4 class="footer-link-title">
-                  <a href="https://www.google.com/maps/search/" class="footer-link">
-                    1 Central Street, Boston <br> (entrance from the store)
-                  </a>
-                </h4>
-              </li>
-              <li class="footer-item">
-                <img class="footer-link-img" src="../../assets/icons/icon-marker.svg" alt="marker">
-                <h4 class="footer-link-title">
-                  <a href="https://www.google.com/maps/search/" class="footer-link">
-
-                    18 South Park, London
-                  </a>
-                </h4>
-              </li>
-            </ul>
-          </div>
-
           <img src="../../assets/img/footer-puppy.png" alt="puppy" class="footer-img">
         </div>
       </div>

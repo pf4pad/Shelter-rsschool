@@ -1,0 +1,196 @@
+
+
+@media( max-width: 1200px){
+ .section-offset {
+  padding: 200px 0 75px 0;
+}
+  .card-list{
+  gap: 40px;
+  }
+  .footer-description{
+    gap: 40px;
+  }
+  .footer-inner{
+  flex-direction: column;
+  align-items: center;
+  gap: 65px;
+  }
+  .nav__item {
+    margin-top: 0; 
+}
+
+}
+@media( max-width: 968px){
+:root{
+--container-offset: 30px;
+}
+.card-item:nth-child(n + 7)  {
+  display: none;
+}
+
+
+.header {
+    padding: 30px 0 30px 0;
+  }
+
+  .center {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.our-friend-slider{
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+ .card-list{
+   justify-content: center;
+   gap: 30px 40px;
+ }
+
+
+
+.footer-title__rigth,
+.footer-title__center {
+margin-top: 0;
+}
+.footer{
+  padding-top: 30px;
+}
+}
+@media (max-width: 768px) {
+
+.site-container{
+  position: relative;
+  /* overflow-x: hidden; */
+}
+
+.logo{
+  z-index: 999;
+}
+
+.hero{
+  padding-top: 150px;
+}
+
+.hero-inner {
+  flex-wrap: wrap;
+  
+ }
+
+.hero__description {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+
+
+.hero-title {
+  margin-top: 0;
+}
+
+
+.hero__link {
+  margin: 0 auto;
+}
+
+.hero-img {
+  max-width: 570px;
+  margin-left: auto;
+}
+
+
+}
+
+
+
+@media (max-width: 760px){
+:root {
+    --container-offset: 10px;
+ }
+h2, h3{
+  font-size: calc(25px + 16 * ((100vw - 320px) / (1280 - 320)));;
+  line-height: 130%;
+}
+.burger{
+  display: flex;
+}
+
+
+.section-offset {
+  padding: 162px 0 42px 0;
+}
+.nav {
+  position: absolute;
+  top: 0;
+  width: 320px;
+  z-index: 1;
+  background: var(--color-dark-3xl);
+  background-size: cover;
+  right: -100%;
+  transition: all 0.5s;
+
+}
+
+.nav__list{
+  flex-direction: column;
+  padding: 248px 0;
+
+}
+.nav__item {
+  font-size: 2rem;
+  line-height: 160%;
+}
+
+.nav--active {
+  right: 0;
+  transition: all 0.5s;
+}
+
+.center{
+  margin-bottom: 40px;
+}
+.our-friend-slider {
+  flex-direction: column;
+  margin-bottom: 43px;
+}
+
+
+.card-list {
+     margin-bottom: 0;
+}
+
+.card-item:nth-child(n + 4)  {
+  display: none;
+}
+
+.our-friend-buttons{
+  gap: 10px;
+}
+.footer-inner{
+  gap: 40px;
+}
+.footer-description {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 40px;
+}
+.footer-list__rigth{
+  align-items: center;
+
+}
+
+.footer-title__center{
+  margin: 0 0 38px 0;
+  width: 294px;
+}
+
+.footer-img {
+    max-width: 260px;
+}
+.footer-list__center .footer-item:first-child {
+    margin-bottom: 40px;
+}
+}
+

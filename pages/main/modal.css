@@ -1,0 +1,54 @@
+.overlay {
+  display: block;
+}
+.overlay {
+  padding: 30px;
+  display: block;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  background: rgba(41, 41, 41, 0.6);
+
+}
+.modal {
+  display: flex;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 50px 30px 30px;
+  background-color: #fff;
+  max-width: 600px;
+  border-radius: 12px;
+  cursor: auto;
+
+}
+.modal__close {
+  position: absolute;
+    top: 15px;
+    right: 20px;
+    padding: 5px;
+    font-size: 24px;
+}
+
+
+.modal__image {
+}
+.modal__title {
+}
+.modal__subtitle {
+}
+.modal__description {
+}
+.modal__age {
+}
+.modal__inoculations {
+}
+.modal__diseases {
+}
+.modal__parasites {
+}

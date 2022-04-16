@@ -8,12 +8,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#111111">
   <title>Shelter</title>
-  <link rel="preload" href="fonts/Georgia.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/GeorgiaItalic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/ArialBlack.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/Arial-ItalicMT.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="vendor.css">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="media768px.css">
+  <link rel="stylesheet" href="modal.css">
   <script defer src="script.js"></script>
 </head>
 
@@ -28,10 +26,12 @@
               <span class="logo__subtitle p">Shelter for pets in Boston</span>
             </a>
           </div>
+
+
           <nav class="nav">
-            <ul class="list-reset nav__list p">
+            <ul class="list-reset p nav__list">
               <li class="nav__item ">
-                <a class="nav__link-active p" href="#">About the shelter</a>
+                <a class="nav__link-active" href="#">About the shelter</a>
               </li>
               <li class="nav__item">
                 <a class="nav__link" href="../pets/index.html">Our pets</a>
@@ -44,6 +44,12 @@
               </li>
             </ul>
           </nav>
+
+          <a class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
         </div>
       </div>
     </header>
@@ -62,7 +68,7 @@
                 love you more
                 than anybody else in the world, you will see!
               </p>
-              <a href="#our-frends" class="btn hero__link">Make a friend</a>
+              <a target="_blank" href="#our-frends" class="btn hero__link">Make a friend</a>
             </div>
             <img src="../../assets/img/start-screen-puppy.png" alt="" class="hero-img">
           </div>
@@ -72,7 +78,7 @@
       <section class="about section-offset">
         <div class="container">
           <div class="about-inner">
-            <img src="../../assets/img/about-pets.png" alt="" class="hero-img">
+            <img src="../../assets/img/about-pets.png" alt="" class="about-img">
             <div class="about__description">
               <h3 class="about-title">
                 About the shelter <br>&#8220;Cozy House&#8221;
@@ -95,7 +101,7 @@
           </div>
         </div>
       </section>
-      <section class="our-friend section-offset">
+      <section class="our-friend section-offset" id="our-frends">
         <div class="container">
           <div class="our-friend-inner">
             <h3 class="center">
@@ -103,9 +109,7 @@
               are looking for a house
             </h3>
             <div class="our-friend-slider">
-              <button class="btn-reset btn-slider">
-                <img src="../../assets/icons/arrow-left.svg" alt="arrow">
-              </button>
+
               <ul class="list-reset card-list">
                 <li class="card-item">
                   <img src="../../assets/img/pets-katrine.png" alt="Katrine" class="card-img">
@@ -135,10 +139,15 @@
                   </a>
                 </li>
               </ul>
-              <button class="btn-reset btn-slider">
+              <button class="btn-reset btn-slider-main-prev">
+                <img src="../../assets/icons/arrow-left.svg" alt="arrow">
+              </button>
+
+              <button class="btn-reset btn-slider-main-next">
                 <img src="../../assets/icons/arrow-rigth.svg" alt="arrow">
               </button>
             </div>
+
             <a href="../pets/index.html" class="btn our-friend__link">
               Get to know the rest
             </a>
@@ -212,7 +221,7 @@
       </section>
       <section class="in-addition section-offset">
         <div class="container">
-          <div class="in-addition-innner">
+          <div class="in-addition-inner">
             <img src="../../assets/img/donation-dog.png" alt="dog" class="in-addition-img">
             <div class="in-addition-text">
               <h3 class="in-addition-title">
@@ -227,12 +236,12 @@
                 </a>
               </h4>
               <p class="p-s in-addition-descr">
-                Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum
-                at libero
-                sagittis dignissim sed ac <br> diam. Praesent ultrices maximus tortor et vulputate. Interdum
-                et malesuada
+                Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum
+                at libero
+                sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum
+                et malesuada
                 fames ac
-                anteipsum primis in faucibus.
+                anteipsum primis in faucibus.
               </p>
             </div>
           </div>
@@ -244,63 +253,87 @@
     <footer class="footer" id="footer">
       <div class="container">
         <div class="footer-inner">
-          <div class="footer-column__rigth">
-            <h3 class="footer-title__rigth">
-              For questions <br> and suggestions
-            </h3>
-            <ul class="list-reset footer-list__rigth">
-              <li class="footer-item">
-                <img class="footer-link-img" src="../../assets/icons/icon-email.svg" alt="email">
-                <h4 class="footer-link-title">
-                  <a href="mailto:email@shelter.com" class="footer-link">
+          <div class="footer-description">
 
-                    email@shelter.com
+            <div class="footer-column__rigth">
+              <h3 class="footer-title__rigth">
+                For questions and suggestions
+              </h3>
+              <ul class="list-reset footer-list__rigth">
+                <li class="footer-item">
+
+                  <a class="footer-link-title" target="_blank" href="mailto:email@shelter.com">
+                    <img class="footer-link-img" src="../../assets/icons/icon-email.svg" alt="email">
+                    <span class="footer-link">
+                      email@shelter.com
+                    </span>
                   </a>
-                </h4>
 
-              </li>
-              <li class="footer-item">
-                <img class="footer-link-img" src="../../assets/icons/icon-phone.svg" alt="phone">
-                <h4 class="footer-link-title">
-                  <a href="tel:+136745677554" class="footer-link">
+                </li>
+                <li class="footer-item">
 
-                    +13 674 567 75 54
+                  <a class="footer-link-title" target="_blank" href="tel:+136745677554">
+                    <img class="footer-link-img" src="../../assets/icons/icon-phone.svg" alt="phone">
+                    <span class="footer-link">
+                      +13 674 567 75 54
+                    </span>
                   </a>
-                </h4>
-              </li>
-            </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column__center">
+              <h3 class="footer-title__center">
+                We are waiting for your visit
+              </h3>
+              <ul class="list-reset footer-list__center">
+                <li class="footer-item">
+                  <a class="footer-link-title" target="_blank" href="https://www.google.com/maps/search/">
+                    <img class="footer-link-img" src="../../assets/icons/icon-marker.svg" alt="marker">
+
+                    <span class="footer-link">
+                      1 Central Street, Boston <br> (entrance from the store)
+                    </span>
+                  </a>
+                </li>
+                <li class="footer-item">
+                  <a class="footer-link-title" target="_blank" href="https://www.google.com/maps/search/">
+                    <img class="footer-link-img" src="../../assets/icons/icon-marker.svg" alt="marker">
+
+                    <span class="footer-link">
+
+                      18 South Park, London
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="footer-column__center">
-            <h3 class="footer-title__center">
-              We are waiting <br> for your visit
-            </h3>
-            <ul class="list-reset footer-list__center">
-              <li class="footer-item">
-                <img class="footer-link-img" src="../../assets/icons/icon-marker.svg" alt="marker">
-                <h4 class="footer-link-title">
-                  <a href="https://www.google.com/maps/search/" class="footer-link">
-                    1 Central Street, Boston <br> (entrance from the store)
-                  </a>
-                </h4>
-              </li>
-              <li class="footer-item">
-                <img class="footer-link-img" src="../../assets/icons/icon-marker.svg" alt="marker">
-                <h4 class="footer-link-title">
-                  <a href="https://www.google.com/maps/search/" class="footer-link">
-
-                    18 South Park, London
-                  </a>
-                </h4>
-              </li>
-            </ul>
-          </div>
-
           <img src="../../assets/img/footer-puppy.png" alt="puppy" class="footer-img">
         </div>
       </div>
     </footer>
 
-  </div>
+
+    <!-- Модалка  -->
+
+    <!-- <div class="overlay">
+      <div class="modal">
+        <button class="modal__close">✕</button>
+        <img class="modal__image" src="..//../assets/img/pets-jennifer.png" alt="jennifer">
+        <h2 class="modal__title">Jennifer</h2>
+        <p class="modal__subtitle">Dog - Labrador</p>
+        <p class="modal__description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new
+          forever home. This girl really enjoys
+          being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of
+          her
+          favorite toys.</p>
+        <p class="modal__age">Age: 2 months</p>
+        <p class="modal__inoculations">Inoculations: none</p>
+        <p class="modal__diseases">Diseases: none</p>
+        <p class="modal__parasites">Parasites: none</p>
+      </div>
+
+    </div> -->
 </body>
 
 </html>
