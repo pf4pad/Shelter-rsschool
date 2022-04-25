@@ -25,13 +25,23 @@
         <div class="header__inner">
           <div class="logo">
             <a href="../main/index.html" class="logo__link logo__link--our-friends">
-              <span class="logo__title logo__title--our-friends">Cozy House</span>
+              <span class="logo__title logo__title--our-friends ">Cozy House</span>
               <span class="logo__subtitle p logo__subtitle--our-friends">
                 Shelter for pets in Boston
               </span>
             </a>
           </div>
+          <div class="background-hidden visually-hidden"></div>
           <nav class="nav">
+
+            <div class="logo visually-hidden logo__mobile">
+              <a href="../main/index.html" class="logo__link logo__link--our-friends">
+                <span class="logo__title logo__title--our-friends logo__title--our-friends-mob">Cozy House</span>
+                <span class="logo__subtitle p logo__subtitle--our-friends logo__subtitle--our-friends-mob">
+                  Shelter for pets in Boston
+                </span>
+              </a>
+            </div>
             <ul class="list-reset p nav__list ">
               <li class="nav__item ">
                 <a class="nav__link nav__link--our-friends" href="../main/index.html">About the shelter</a>
@@ -49,13 +59,14 @@
           </nav>
         </div>
       </div>
-      <a class="burger">
+      <a class="burger burger--pets">
         <span></span>
         <span></span>
         <span></span>
       </a>
     </header>
     <main class="main">
+      <div class="background-hidden visually-hidden"></div>
       <section class="our-friend section-offset">
         <div class="container">
           <div class="our-friend-inner">
@@ -66,7 +77,10 @@
             </h3>
             <div class="our-friend-slider">
               <ul class="list-reset card-list">
-                <li class="card-item">
+                <div class="all-pets">
+
+                </div>
+                <!-- <li class="card-item">
                   <img src="../../assets/img2/pets-katrine.png" alt="Cat" class="card-img">
                   <h4>
                     Katrine
@@ -137,7 +151,7 @@
                   <a href="" class="card-btn">
                     Learn more
                   </a>
-                </li>
+                </li> -->
               </ul>
             </div>
             <div class="our-friend-buttons">
@@ -226,8 +240,40 @@
         </div>
       </div>
     </footer>
+    <!-- Модалка  -->
+    <div class="overlay">
+      <!-- <div class="modal">
+        <button class="modal__close">✕</button>
+        <img class="modal__image" src="../../assets/img/pets-jennifer.png" alt="jennifer">
+        <div class="modal__text">
+          <h3 class="modal__title">Jennifer</h3>
+          <h4 class="modal__subtitle">Dog - Labrador</h4>
+          <h5 class="modal__description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a
+            new forever home. This girl really enjoys
+            being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all
+            of her
+            favorite toys.</h5>
+          <ul class="list-reset modal__list">
+            <li class="modal__item">
+              <p class="modal__age"> <span>Age:</span> 2 months</p>
+            </li>
+            <li class="modal__item">
+              <p class="modal__inoculations"><span>Inoculations:</span> none</p>
+            </li>
+            <li class="modal__item">
+              <p class="modal__diseases"><span>Diseases:</span> none</p>
+            </li>
+            <li class="modal__item">
+              <p class="modal__parasites"><span>Parasites:</span> none</p>
+            </li>
+          </ul>
+        </div>
 
+      </div> -->
+
+    </div>
   </div>
+  <script src="script.js"></script>
 </body>
 
 </html>

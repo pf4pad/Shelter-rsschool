@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="media768px.css">
   <link rel="stylesheet" href="modal.css">
-  <script defer src="script.js"></script>
+  <!-- <script defer src="script.js" type="module"></script> -->
+
 </head>
 
 <body class="page__body">
@@ -27,8 +28,13 @@
             </a>
           </div>
 
-
           <nav class="nav">
+            <div class="logo visually-hidden logo__mobile">
+              <a href="#" class="logo__link">
+                <span class="logo__title">Cozy House</span>
+                <span class="logo__subtitle p">Shelter for pets in Boston</span>
+              </a>
+            </div>
             <ul class="list-reset p nav__list">
               <li class="nav__item ">
                 <a class="nav__link-active" href="#">About the shelter</a>
@@ -43,17 +49,22 @@
                 <a class="nav__link" href="#footer">Contacts</a>
               </li>
             </ul>
-          </nav>
 
+          </nav>
           <a class="burger">
             <span></span>
             <span></span>
             <span></span>
           </a>
         </div>
+
       </div>
+
     </header>
     <main class="main">
+      <div class="background-hidden visually-hidden">
+
+      </div>
       <section class="hero">
         <div class="container">
           <div class="hero-inner">
@@ -111,7 +122,10 @@
             <div class="our-friend-slider">
 
               <ul class="list-reset card-list">
-                <li class="card-item">
+                <div class="all-pets">
+
+                </div>
+                <!-- <li class="card-item">
                   <img src="../../assets/img/pets-katrine.png" alt="Katrine" class="card-img">
                   <h4>
                     Katrine
@@ -138,6 +152,15 @@
                     Learn more
                   </a>
                 </li>
+                <li class="card-item">
+                  <img src="../../assets/img/pets-woody.png" alt="Cat" class="card-img">
+                  <h4>
+                    Woody
+                  </h4>
+                  <a href="" class="card-btn">
+                    Learn more
+                  </a>
+                </li> -->
               </ul>
               <button class="btn-reset btn-slider-main-prev">
                 <img src="../../assets/icons/arrow-left.svg" alt="arrow">
@@ -316,24 +339,39 @@
 
     <!-- Модалка  -->
 
-    <!-- <div class="overlay">
-      <div class="modal">
+    <div class="overlay">
+      <!-- <div class="modal">
         <button class="modal__close">✕</button>
-        <img class="modal__image" src="..//../assets/img/pets-jennifer.png" alt="jennifer">
-        <h2 class="modal__title">Jennifer</h2>
-        <p class="modal__subtitle">Dog - Labrador</p>
-        <p class="modal__description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new
-          forever home. This girl really enjoys
-          being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of
-          her
-          favorite toys.</p>
-        <p class="modal__age">Age: 2 months</p>
-        <p class="modal__inoculations">Inoculations: none</p>
-        <p class="modal__diseases">Diseases: none</p>
-        <p class="modal__parasites">Parasites: none</p>
-      </div>
+        <img class="modal__image" src="../../assets/img/pets-jennifer.png" alt="jennifer">
+        <div class="modal__text">
+          <h3 class="modal__title">Jennifer</h3>
+          <h4 class="modal__subtitle">Dog - Labrador</h4>
+          <h5 class="modal__description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a
+            new forever home. This girl really enjoys
+            being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all
+            of her
+            favorite toys.</h5>
+          <ul class="list-reset modal__list">
+            <li class="modal__item">
+              <p class="modal__age"> <span>Age:</span> 2 months</p>
+            </li>
+            <li class="modal__item">
+              <p class="modal__inoculations"><span>Inoculations:</span> none</p>
+            </li>
+            <li class="modal__item">
+              <p class="modal__diseases"><span>Diseases:</span> none</p>
+            </li>
+            <li class="modal__item">
+              <p class="modal__parasites"><span>Parasites:</span> none</p>
+            </li>
+          </ul>
+        </div>
 
-    </div> -->
+      </div> -->
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
