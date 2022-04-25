@@ -247,7 +247,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (left >= -1800) {
         left = left + num;
       }
-
+      if (ALL_SLIDES.style.left < 0) {
+        left = 0;
+      }
 
       ALL_SLIDES.style.left = left + 'px'
     })
@@ -264,19 +266,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  if (width >= 1280) {
-    num = 3 * num
-    click(num)
-  }
-  if (width < 1280 && width >= 760) {
-    num = 2 * num
-    click(num)
-  }
-  if (width < 760) {
+  // if (width >= 1280) {
+  //   num = 3 * num
+  //   click(num)
+  // }
+  // if (width < 1280 && width >= 760) {
+  //   num = 2 * num
+  //   click(num)
+  // }
+  // if (width < 760) {
 
-    click(num)
-  }
-
+  //   click(num)
+  // }
+  click(num)
 
 
 })
