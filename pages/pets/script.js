@@ -164,152 +164,84 @@ function getRandomInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-let y;
+let n;
 
-let arrPet = [];
-let stackPet = [];
+let petStack = [];
+let octStack = [];
+let sixStack = [];
+let threeStack = [];
 
 function slideLoad() {
 
-  switch (arrPet.length) {
-    case 0:
-      y = 4;
-      break;
-    case 1:
-      y = 0;
-      break;
-    case 2:
-      y = 2;
-      break;
-    case 3:
-      y = 1;
-      break;
-    case 4:
-      y = 5;
-      break;
-    case 5:
-      y = 7;
-      break;
-    case 6:
-      y = 3;
-      break;
-    case 7:
-      y = 6;
-      break;
-    default:
-      y = getRandomInRange(0, 7);
+  n = getRandomInRange(0, 7);
+  petStack.push(n);
+
+
+  if (octStack.length >= 8) {
+    octStack = [];
   }
-
-  arrPet.push(y);
-
-  if (arrPet.length > 8) {
-    if (stackPet.length >= 8) {
-      stackPet = [];
-    }
-    while (stackPet.includes(i)) {
-      y = getRandomInRange(0, 7);
-    }
-    stackPet.push(y);
+  if (sixStack.length >= 6) {
+    sixStack = [];
   }
-
+  if (threeStack.length >= 3) {
+    threeStack = [];
+  }
+  while (octStack.includes(n) || sixStack.includes(n) || threeStack.includes(n)) {
+    n = getRandomInRange(0, 7);
+  }
+  octStack.push(n);
+  sixStack.push(n);
+  threeStack.push(n);
 
 
   let slide = `<li class="card-item">
-                  <img src="${pets[y].img}" alt="${pets[y].type} ${pets[y].name}" class="card-img">
-                  <h4 class="class-name">
-                    ${pets[y].name}
-                  </h4>
-                  <a href="" class="card-btn" onclick="getModal(${y})">
-                      Learn more
-                  </a>
-                </li>`;
+                   <img src="${pets[n].img}" alt="${pets[n].type} ${pets[n].name}" class="card-img">
+                   <h4 class="class-name">
+                     ${pets[n].name}
+                   </h4>
+                   <a href="" class="card-btn" onclick="getModal(${n})">
+                       Learn more
+                   </a>
+                 </li>`;
   ALL_SLIDES.innerHTML += slide;
 
 }
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  for (let i = 0; i <= 7; i++) {
+  for (let i = 0; i <= 48; i++) {
     slideLoad();
   }
-
-  let left = 0;
-
-  num = 360
-
-  function click(num) {
-    BtnLeft.addEventListener('click', () => {
-
-      if (left === 0) {
-        left = -1800
-      }
-      if (left >= -1800) {
-        left = left + num;
-      }
-
-
-      ALL_SLIDES.style.left = left + 'px'
-    })
-    BtnRight.addEventListener('click', () => {
-
-      left = left - num;
-
-      if (left < -1800) {
-        left = 0;
-      }
-      ALL_SLIDES.style.left = left + 'px';
-
-    })
-  }
-
-
-  if (width >= 1280) {
-    num = 3 * num
-    click(num)
-  }
-  if (width < 1280 && width >= 760) {
-    num = 2 * num
-    click(num)
-  }
-  if (width < 760) {
-
-    click(num)
-  }
-
-
-
 })
 
-function getModal(y) {
+function getModal(n) {
 
   OVERLAY.classList.add('overlay-active')
 
   let modal = `<div class="modal">
                     <button class="modal__close">✕</button>
-                    <img class="modal__image" src="${pets[y].img}" alt="${pets[y].type} ${pets[y].name}">
+                    <img class="modal__image" src="${pets[n].img}" alt="${pets[n].type} ${pets[n].name}">
                     <div class="modal__text">
-                      <h3 class="modal__title">${pets[y].name}</h3>
-                      <h4 class="modal__subtitle">${pets[y].type} - ${pets[y].breed}</h4>
-                      <h5 class="modal__description">${pets[y].description}</h5>
+                      <h3 class="modal__title">${pets[n].name}</h3>
+                      <h4 class="modal__subtitle">${pets[n].type} - ${pets[n].breed}</h4>
+                      <h5 class="modal__description">${pets[n].description}</h5>
                       <ul class="list-reset modal__list">
                         <li class="modal__item">
-                          <p class="modal__age"> <span>Age:</span> ${pets[y].age}</p>
+                          <p class="modal__age"> <span>Age:</span> ${pets[n].age}</p>
                         </li>
                         <li class="modal__item">
-                          <p class="modal__inoculations"><span>Inoculations:</span> ${pets[y].inoculations.join()}</p>
+                          <p class="modal__inoculations"><span>Inoculations:</span> ${pets[n].inoculations.join()}</p>
                         </li>
                         <li class="modal__item">
-                          <p class="modal__diseases"><span>Diseases:</span> ${pets[y].diseases.join()}</p>
+                          <p class="modal__diseases"><span>Diseases:</span> ${pets[n].diseases.join()}</p>
                         </li>
                         <li class="modal__item">
-                          <p class="modal__parasites"><span>Parasites:</span> ${pets[y].parasites.join()}</p>
+                          <p class="modal__parasites"><span>Parasites:</span> ${pets[n].parasites.join()}</p>
                         </li>
                       </ul>
                     </div>
 
                   </div>`
-
-
 
   OVERLAY.innerHTML = modal
   MODAL.addEventListener('click', (e) => {
@@ -330,5 +262,131 @@ OVERLAY.addEventListener('click', (e) => {
 
   onScroll()
 })
+
+// buttons
+
+let firstPageBtn = document.querySelector('.first');
+let prevPageBtn = document.querySelector('.prev');
+let nextPageBtn = document.querySelector('.next');
+let lastPageBtn = document.querySelector('.all');
+// pets page count
+let page__count = document.querySelector('.number');
+let sliderOuter = document.querySelector('.card-list');
+let y = ALL_SLIDES.style.top;
+let x = ALL_SLIDES.style.left;
+
+function pageCount() {
+  if (width >= 1280) {
+    page__count.textContent = `${-y / 930 + 1}`;
+  } else if (width >= 768 && width < 1280) {
+    page__count.textContent = `${-y / 1395 + 1}`;
+  } else {
+    page__count.textContent = `${-y / 1395 + 1}`;
+  }
+  if (page__count.textContent == Math.floor(ALL_SLIDES.offsetHeight / sliderOuter.offsetHeight)) {
+    lastPageBtn.classList.add('button__of');
+    nextPageBtn.classList.add('button__of');
+    firstPageBtn.classList.remove('button__of');
+    prevPageBtn.classList.remove('button__of');
+  }
+  else if (page__count.textContent == 1) {
+    lastPageBtn.classList.remove('button__of');
+    nextPageBtn.classList.remove('button__of');
+    firstPageBtn.classList.add('button__of');
+    prevPageBtn.classList.add('button__of');
+  }
+  else {
+    lastPageBtn.classList.remove('button__of');
+    nextPageBtn.classList.remove('button__of');
+    firstPageBtn.classList.remove('button__of');
+    prevPageBtn.classList.remove('button__of');
+  }
+}
+
+nextPageBtn.addEventListener('click', () => {
+  if (width >= 1280) {
+    y = y - 930;
+    if (y < -4650) {
+      y = -4650;
+    }
+    pageCount();
+    ALL_SLIDES.style.top = `${y}px`;
+  }
+  else if (width < 1280 && width >= 768) {
+    y = y - 1395;
+    if (y < - 9765) {
+      y = - 9765;
+    }
+    pageCount();
+    ALL_SLIDES.style.top = `${y}px`;
+  }
+  else if (width < 758) {
+    y = y - 1395;
+    if (y < - 20925) {
+      y = - 20925;
+    }
+    pageCount();
+    ALL_SLIDES.style.top = `${y}px`;
+  }
+})
+
+lastPageBtn.addEventListener('click', () => {
+  if (width >= 1280) {
+    y = -4650;
+    pageCount();
+    ALL_SLIDES.style.top = `${y}px`;
+  }
+  else if (width < 1280 && width >= 768) {
+    y = -9765;
+    pageCount();
+    ALL_SLIDES.style.top = `${y}px`;
+  }
+  else if (width < 768) {
+    y = -20925;
+    pageCount();
+    ALL_SLIDES.style.top = `${y}px`;
+  }
+})
+
+prevPageBtn.addEventListener('click', () => {
+  if (width >= 1280) {
+    y = y + 930;
+    if (y >= 0) {
+      y = 0;
+    }
+    pageCount();
+    ALL_SLIDES.style.top = `${y}px`;
+  }
+  else if (width < 1280 && width >= 768) {
+    y = y + 1395;
+    if (y >= 0) {
+      y = 0;
+    }
+    pageCount();
+    ALL_SLIDES.style.top = `${y}px`;
+  }
+  else if (width < 768) {
+    y = y + 1395;
+    if (y >= 0) {
+      y = 0;
+    }
+    pageCount();
+    ALL_SLIDES.style.top = `${y}px`;
+  }
+})
+
+firstPageBtn.addEventListener('click', () => {
+  y = 0;
+  pageCount();
+  ALL_SLIDES.style.top = 0;
+})
+
+window.onresize = function () {
+  width = window.innerWidth;
+  y = 0;
+  pageCount();
+  ALL_SLIDES.style.top = 0;
+}
+
 
 

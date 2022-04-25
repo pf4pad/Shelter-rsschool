@@ -436,13 +436,17 @@ h5 {
 }
 
 .card-list {
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px 40px;
   overflow-x: hidden;
+  width: 120rem;
+  height: 920px;
+  overflow: hidden;
+  -webkit-transition: 0.5s all ease-in;
+  transition: 0.5s all ease-in;
 }
 
 .all-pets {
@@ -450,15 +454,18 @@ h5 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   left: 0;
-  gap: 90px;
   transition: all 0.5s;
-
+  gap: 30px 40px;
+  width: 1920px;
+  height: 8928px;
+  overflow: hidden;
+  align-content: flex-start;
 }
 
 .card-item {
-
+  align-content: flex-start;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -535,18 +542,9 @@ h5 {
   gap: 20px;
 }
 
-.btn-slider-prev {
-  color: var(--color-dark-s);
-  width: 52px;
-  height: 52px;
-  border: 2px solid var(--color-dark-s);
-  border-radius: 100px;
 
-}
 
-[data-state="disabled"] {
-  cursor: unset;
-}
+
 
 .btn-slider-active {
   color: var(--color-dark-3xl);
@@ -557,6 +555,7 @@ h5 {
   cursor: unset;
 }
 
+.btn-slider-prev,
 .btn-slider-next {
   color: var(--color-dark-3xl);
   width: 52px;
@@ -566,10 +565,22 @@ h5 {
   transition: all 0.3s;
 }
 
+.btn-slider-prev:hover,
 .btn-slider-next:hover {
   background-color: var(--color-primary-light);
   border: 2px solid var(--color-primary-light);
   transition: all 0.3s;
+}
+
+.button__of {
+  cursor: unset;
+  border-color: #CDCDCD;
+  color: #CDCDCD;
+}
+
+.button__of:hover {
+  background-color: transparent;
+  border-color: var(--color-dark-s);
 }
 
 .footer {
