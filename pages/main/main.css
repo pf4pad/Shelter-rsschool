@@ -485,7 +485,7 @@ h5 {
   left: 0;
   gap: 90px;
   transition: all 0.5s;
-
+  left: -1080px;
 }
 
 .card-item {

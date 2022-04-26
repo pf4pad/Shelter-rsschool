@@ -96,6 +96,12 @@
     margin-bottom: 60px;
   }
 
+  .all-pets {
+    left: -930px;
+    width: 1820px;
+    gap: 40px;
+  }
+
   .btn-slider-main-prev {
     left: -64px;
   }
@@ -331,6 +337,12 @@
   .card-list {
     max-width: 270px;
     margin-bottom: 114px;
+  }
+
+  .all-pets {
+    width: 1620px;
+    left: -810px;
+    gap: 0;
   }
 
   .btn-slider-main-prev {
