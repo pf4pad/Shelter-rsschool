@@ -777,6 +777,7 @@ h5 {
   max-width: 300px;
 }
 
+
 .move-right {
   -webkit-animation: move-right 1s ease-in-out;
   animation: move-right 1s ease-in-out;
@@ -820,107 +821,6 @@ h5 {
 @keyframes move-left {
   from {
     left: -1080px;
-  }
-
-  to {
-    left: 0;
-  }
-}
-
-
-.move-right-768 {
-  -webkit-animation: move-right-768 0.7s ease-in-out;
-  animation: move-right-768 0.7s ease-in-out;
-}
-
-@-webkit-keyframes move-right-768 {
-  from {
-    left: -930px;
-  }
-
-  to {
-    left: -1860px;
-  }
-}
-
-@keyframes move-right-768 {
-  from {
-    left: -930px;
-  }
-
-  to {
-    left: -1860px;
-  }
-}
-
-.move-left-768 {
-  -webkit-animation: move-left-768 0.7s ease-in-out;
-  animation: move-left-768 0.7s ease-in-out;
-}
-
-@-webkit-keyframes move-left-768 {
-  from {
-    left: -930px;
-  }
-
-  to {
-    left: 0;
-  }
-}
-
-@keyframes move-left-768 {
-  from {
-    left: -930px;
-  }
-
-  to {
-    left: 0;
-  }
-}
-
-.move-right-320 {
-  -webkit-animation: move-right-320 0.5s ease-in-out;
-  animation: move-right-320 0.5s ease-in-out;
-}
-
-@-webkit-keyframes move-right-320 {
-  from {
-    left: -810px;
-  }
-
-  to {
-    left: -1620px;
-  }
-}
-
-@keyframes move-right-320 {
-  from {
-    left: -810px;
-  }
-
-  to {
-    left: -1620px;
-  }
-}
-
-.move-left-320 {
-  -webkit-animation: move-left-320 0.5s ease-in-out;
-  animation: move-left-320 0.5s ease-in-out;
-}
-
-@-webkit-keyframes move-left-320 {
-  from {
-    left: -810px;
-  }
-
-  to {
-    left: 0;
-  }
-}
-
-@keyframes move-left-320 {
-  from {
-    left: -810px;
   }
 
   to {

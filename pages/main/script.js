@@ -156,7 +156,7 @@ const BtnLeft = document.querySelector('.btn-slider-main-prev');
 const BtnRight = document.querySelector('.btn-slider-main-next');
 
 const slides = document.querySelector('.card-list')
-let x = ALL_SLIDES.style.left;
+
 let width = window.innerWidth;
 // Функция случайного числа min max
 
@@ -165,14 +165,14 @@ function getRandomInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-let y;
+
 
 let arrPet = [];
 let rightStack = [];
 let leftStack = [];
 
 function slideLoad() {
-
+  let y;
 
   for (let i = 0; i < 8; i++) {
     y = getRandomInRange(0, 7);
@@ -281,15 +281,15 @@ function leftLoad() {
   ALL_SLIDES.innerHTML = '';
 
   leftStack.forEach(y => {
-    let slide = `<div class="pets-cards">
-            <div class="pets-card" onclick="openModal(${y})">
-                <div class="pets-card__image">
-                    <img class="pets-card_image-img" src="${pets[y].img}" alt="${pets[y].type} ${pets[y].name}">
-                </div>
-                <h3 class="pets-card__name">${pets[y].name}</h3>
-                <button class="pets-card__button" data-modal="${y}">Learn more</button>
-            </div>
-        </div>`;
+    let slide = `<li class="card-item">
+                  <img src="${pets[y].img}" alt="${pets[y].type} ${pets[y].name}" class="card-img">
+                  <h4 class="class-name">
+                    ${pets[y].name}
+                  </h4>
+                  <a href="" class="card-btn" onclick="getModal(${y})">
+                      Learn more
+                  </a>
+                </li>`;;
 
     ALL_SLIDES.innerHTML += slide;
   })
@@ -303,10 +303,10 @@ function moveRight() {
   if (width >= 1280) {
     ALL_SLIDES.classList.add('move-right');
   }
-  if (width < 1280 && width >= 768) {
+  if (width < 1280 && width >= 760) {
     ALL_SLIDES.classList.add('move-right-768');
   }
-  if (width < 768) {
+  if (width < 760) {
     ALL_SLIDES.classList.add('move-right-320');
 
   }
@@ -317,10 +317,10 @@ function moveLeft() {
   if (width >= 1280) {
     ALL_SLIDES.classList.add('move-left');
   }
-  if (width < 1280 && width >= 768) {
+  if (width < 1280 && width >= 760) {
     ALL_SLIDES.classList.add('move-left-768');
   }
-  if (width < 768) {
+  if (width < 760) {
     ALL_SLIDES.classList.add('move-left-320');
 
   }
