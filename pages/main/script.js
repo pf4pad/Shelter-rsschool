@@ -187,7 +187,7 @@ function slideLoad() {
 
 
   arrPet.forEach(y => {
-    let slide = `<li class="card-item">
+    let slide = `<li class="card-item onclick="getModal(${y})">
                   <img src="${pets[y].img}" alt="${pets[y].type} ${pets[y].name}" class="card-img">
                   <h4 class="class-name">
                     ${pets[y].name}
