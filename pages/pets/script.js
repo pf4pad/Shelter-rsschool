@@ -194,7 +194,7 @@ function slideLoad() {
   threeStack.push(n);
 
 
-  let slide = `<li class="card-item" onclick="getModal(${y})>
+  let slide = `<li class="card-item">
                    <img src="${pets[n].img}" alt="${pets[n].type} ${pets[n].name}" class="card-img">
                    <h4 class="class-name">
                      ${pets[n].name}

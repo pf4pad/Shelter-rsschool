@@ -165,29 +165,57 @@ function getRandomInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
+let y;
 
 let arrPet = [];
-let rightStack = [];
-let leftStack = [];
+let stackPet = [];
 
 function slideLoad() {
-  let y;
 
-  for (let i = 0; i < 8; i++) {
-    y = getRandomInRange(0, 7);
-    while (arrPet.includes(y)) {
+  switch (arrPet.length) {
+    case 0:
+      y = 4;
+      break;
+    case 1:
+      y = 0;
+      break;
+    case 2:
+      y = 2;
+      break;
+    case 3:
+      y = 1;
+      break;
+    case 4:
+      y = 5;
+      break;
+    case 5:
+      y = 7;
+      break;
+    case 6:
+      y = 3;
+      break;
+    case 7:
+      y = 6;
+      break;
+    default:
       y = getRandomInRange(0, 7);
-    }
-    arrPet.push(y);
   }
-  y = arrPet[0];
+
   arrPet.push(y);
 
+  if (arrPet.length > 8) {
+    if (stackPet.length >= 8) {
+      stackPet = [];
+    }
+    while (stackPet.includes(i)) {
+      y = getRandomInRange(0, 7);
+    }
+    stackPet.push(y);
+  }
 
 
-  arrPet.forEach(y => {
-    let slide = `<li class="card-item onclick="getModal(${y})">
+
+  let slide = `<li class="card-item">
                   <img src="${pets[y].img}" alt="${pets[y].type} ${pets[y].name}" class="card-img">
                   <h4 class="class-name">
                     ${pets[y].name}
@@ -196,164 +224,63 @@ function slideLoad() {
                       Learn more
                   </a>
                 </li>`;
-    ALL_SLIDES.innerHTML += slide;
-  })
+  ALL_SLIDES.innerHTML += slide;
+
 }
-
-function rightLoad() {
-  rightStack = [];
-  let y;
-  let xStack = arrPet.slice(6, 9);
-
-  for (let i = 0; i < 3; i++) {
-    y = getRandomInRange(0, 7);
-    while (xStack.includes(y) || rightStack.includes(y)) {
-      y = getRandomInRange(0, 7);
-    }
-    rightStack.push(y);
-  }
-
-  xStack.forEach(item => {
-    rightStack.push(item);
-  })
-
-  for (let i = 0; i < 2; i++) {
-    y = getRandomInRange(0, 7);
-    while (rightStack.includes(y)) {
-      y = getRandomInRange(0, 7);
-    }
-    rightStack.push(y);
-  }
-
-  y = rightStack[0];
-  rightStack.push(y);
-
-  ALL_SLIDES.innerHTML = '';
-
-  rightStack.forEach(y => {
-    let slide = `<li class="card-item">
-                  <img src="${pets[y].img}" alt="${pets[y].type} ${pets[y].name}" class="card-img">
-                  <h4 class="class-name">
-                    ${pets[y].name}
-                  </h4>
-                  <a href="" class="card-btn" onclick="getModal(${y})">
-                      Learn more
-                  </a>
-                </li>`;
-
-    ALL_SLIDES.innerHTML += slide;
-  })
-}
-
-function leftLoad() {
-  console.log(arrPet);
-  leftStack = [];
-  let y;
-  let xStack = arrPet.slice(0, 3);
-
-  for (let i = 0; i < 3; i++) {
-    y = getRandomInRange(0, 7);
-    while (xStack.includes(y) || leftStack.includes(y)) {
-      y = getRandomInRange(0, 7);
-    }
-    leftStack.push(y);
-  }
-
-  console.log(leftStack)
-
-  xStack.forEach(item => {
-    leftStack.push(item);
-  })
-
-  for (let i = 0; i < 2; i++) {
-    y = getRandomInRange(0, 7);
-    while (leftStack.includes(y)) {
-      y = getRandomInRange(0, 7);
-    }
-    leftStack.push(y);
-  }
-
-  y = leftStack[0];
-  leftStack.push(y);
-
-  console.log(leftStack)
-
-  ALL_SLIDES.innerHTML = '';
-
-  leftStack.forEach(y => {
-    let slide = `<li class="card-item">
-                  <img src="${pets[y].img}" alt="${pets[y].type} ${pets[y].name}" class="card-img">
-                  <h4 class="class-name">
-                    ${pets[y].name}
-                  </h4>
-                  <a href="" class="card-btn" onclick="getModal(${y})">
-                      Learn more
-                  </a>
-                </li>`;;
-
-    ALL_SLIDES.innerHTML += slide;
-  })
-}
-
-
-function moveRight() {
-  ALL_SLIDES.classList.remove('move-left');
-  ALL_SLIDES.classList.remove('move-right-768');
-  ALL_SLIDES.classList.remove('move-right-320');
-  if (width >= 1280) {
-    ALL_SLIDES.classList.add('move-right');
-  }
-  if (width < 1280 && width >= 760) {
-    ALL_SLIDES.classList.add('move-right-768');
-  }
-  if (width < 760) {
-    ALL_SLIDES.classList.add('move-right-320');
-
-  }
-  BtnRight.removeEventListener('click', moveRight);
-  BtnLeft.removeEventListener('click', moveLeft);
-}
-function moveLeft() {
-  if (width >= 1280) {
-    ALL_SLIDES.classList.add('move-left');
-  }
-  if (width < 1280 && width >= 760) {
-    ALL_SLIDES.classList.add('move-left-768');
-  }
-  if (width < 760) {
-    ALL_SLIDES.classList.add('move-left-320');
-
-  }
-  BtnRight.removeEventListener('click', moveRight);
-  BtnLeft.removeEventListener('click', moveLeft);
-}
-
-ALL_SLIDES.addEventListener('animationend', () => {
-  if (ALL_SLIDES.classList.contains('move-right') || ALL_SLIDES.classList.contains('move-right-768') || ALL_SLIDES.classList.contains('move-right-320')) {
-    rightLoad();
-    arrPet = rightStack.slice(0, rightStack.length);
-  }
-  else if (ALL_SLIDES.classList.contains('move-left') || ALL_SLIDES.classList.contains('move-left-768') || ALL_SLIDES.classList.contains('move-left-320')) {
-    leftLoad();
-    arrPet = leftStack.slice(0, leftStack.length);
-  }
-  ALL_SLIDES.classList.remove('move-right');
-  ALL_SLIDES.classList.remove('move-right-768');
-  ALL_SLIDES.classList.remove('move-right-320');
-  ALL_SLIDES.classList.remove('move-left');
-  ALL_SLIDES.classList.remove('move-left-768');
-  ALL_SLIDES.classList.remove('move-left-320');
-  BtnRight.addEventListener('click', moveRight);
-  BtnLeft.addEventListener('click', moveLeft);
-})
-
-BtnRight.addEventListener('click', moveRight);
-
-BtnLeft.addEventListener('click', moveLeft);
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  slideLoad();
+  for (let i = 0; i <= 7; i++) {
+    slideLoad();
+  }
+
+  let left = 0;
+
+  num = 360
+
+  function click(num) {
+    BtnLeft.addEventListener('click', () => {
+
+      if (left === 0) {
+        left = -1800
+      }
+      if (left >= -1800) {
+        left = left + num;
+      }
+      if (ALL_SLIDES.style.left < 0) {
+        left = 0;
+      }
+
+      ALL_SLIDES.style.left = left + 'px'
+    })
+    BtnRight.addEventListener('click', () => {
+
+      left = left - num;
+
+      if (left < -1800) {
+        left = 0;
+      }
+      ALL_SLIDES.style.left = left + 'px';
+
+    })
+  }
+
+
+  // if (width >= 1280) {
+  //   num = 3 * num
+  //   click(num)
+  // }
+  // if (width < 1280 && width >= 760) {
+  //   num = 2 * num
+  //   click(num)
+  // }
+  // if (width < 760) {
+
+  //   click(num)
+  // }
+  click(num)
+
+
 })
 
 function getModal(y) {

@@ -485,7 +485,7 @@ h5 {
   left: 0;
   gap: 90px;
   transition: all 0.5s;
-  left: -1080px;
+
 }
 
 .card-item {
@@ -775,55 +775,4 @@ h5 {
 
 .footer-img {
   max-width: 300px;
-}
-
-
-.move-right {
-  -webkit-animation: move-right 1s ease-in-out;
-  animation: move-right 1s ease-in-out;
-}
-
-@-webkit-keyframes move-right {
-  from {
-    left: -1080px;
-  }
-
-  to {
-    left: -2160px;
-  }
-}
-
-@keyframes move-right {
-  from {
-    left: -1080px;
-  }
-
-  to {
-    left: -2160px;
-  }
-}
-
-.move-left {
-  -webkit-animation: move-left 1s ease-in-out;
-  animation: move-left 1s ease-in-out;
-}
-
-@-webkit-keyframes move-left {
-  from {
-    left: -1080px;
-  }
-
-  to {
-    left: 0;
-  }
-}
-
-@keyframes move-left {
-  from {
-    left: -1080px;
-  }
-
-  to {
-    left: 0;
-  }
 }
